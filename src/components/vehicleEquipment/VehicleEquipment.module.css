@@ -1,1 +1,43 @@
+.container {
+  margin-bottom: 32px;
+}
 
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #101828;
+}
+
+.parameters-list {
+  display: grid;
+  grid-template-columns: 112px 112px 112px;
+  grid-template-rows: 95px 95px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  margin-top: 24px;
+  padding-top: 24px;
+
+  border-top: rgba(16, 24, 40, 0.1) solid 1px;
+}
+
+.parameters-item {
+  display: flex;
+  flex-direction: column;
+
+  border: solid 1px rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  margin-bottom: 8px;
+}
+
+p {
+  line-height: 1;
+}

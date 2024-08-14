@@ -1,1 +1,48 @@
+.container {
+  margin-bottom: 32px;
+}
 
+.title {
+  margin-bottom: 8px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.select-wrap {
+  position: relative;
+
+  width: 360px;
+  height: 56px;
+}
+
+.select {
+  width: 360px;
+  height: 56px;
+  padding: 18px 18px 18px 44px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background-color: #f7f7f7;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.icon {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 2;
+}

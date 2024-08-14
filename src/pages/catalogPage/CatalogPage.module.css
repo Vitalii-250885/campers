@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+}
+
+.aside-section {
+  margin-right: 64px;
+  width: 360px;
+}
+
+.main-section {
+  width: 100%;
+}

@@ -1,15 +1,18 @@
-import Button from "../button/Button";
 import VehicleEquipment from "../vehicleEquipment/VehicleEquipment";
 import VehicleType from "../vehicleType/VehicleType";
 
+import css from "./Filters.module.css";
+
 const Filters = () => {
   return (
-    <>
-      <h3>Filters</h3>
+    <div>
+      <h3 className={css.title}>Filters</h3>
       <VehicleEquipment />
       <VehicleType />
-      <Button />
-    </>
+      <button type="button" className={css.button}>
+        Search
+      </button>
+    </div>
   );
 };
 
