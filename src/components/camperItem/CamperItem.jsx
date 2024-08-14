@@ -27,7 +27,10 @@ const CamperItem = () => {
             <div>
               <div className={css["name-prise"]}>
                 <h4 className={css.name}>{name}</h4>
-                <p className={css.price}>&#8364; {price.toFixed(2)}</p>
+                <p className={css.price}>
+                  &#8364; {price.toFixed(2)}
+                  <img src="icons/like.svg" alt="" className={css.like} />
+                </p>
               </div>
               <p className={css.rating}>
                 <img
