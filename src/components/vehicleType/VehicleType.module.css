@@ -12,6 +12,7 @@
 .parameters-list {
   display: grid;
   grid-template-columns: 112px 112px 112px;
+  grid-template-rows: 95px;
   grid-column-gap: 10px;
 
   margin-top: 24px;
@@ -33,6 +34,6 @@
   justify-content: center;
 }
 
-img {
+.icon {
   margin-bottom: 8px;
 }

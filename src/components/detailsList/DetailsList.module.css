@@ -1,0 +1,24 @@
+.details-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details-item {
+  display: flex;
+
+  padding: 12px 18px;
+  margin-right: 8px;
+  margin-top: 8px;
+
+  background-color: #f2f4f7;
+
+  border-radius: 100px;
+}
+
+.details-item:last-child {
+  margin-right: 0;
+}
+
+.icon {
+  margin-right: 8px;
+}

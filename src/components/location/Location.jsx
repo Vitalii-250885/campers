@@ -12,11 +12,7 @@ const Location = () => {
             Kyiv, Ukraine
           </option>
         </select>
-        <img
-          src="../../../public/icons/map-pin.svg"
-          className={css.icon}
-          alt=""
-        />
+        <img src="icons/map-pin.svg" className={css.icon} alt="" />
       </div>
     </div>
   );
