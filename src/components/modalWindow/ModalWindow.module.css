@@ -1,0 +1,57 @@
+.modalOpen {
+  overflow: hidden;
+}
+
+.modalWindow {
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.modalContainer {
+  position: relative;
+
+  width: 902px;
+  padding: 40px;
+
+  background-color: #ffffff;
+
+  border-radius: 20px;
+}
+
+.btnClose {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+  top: 20px;
+  right: 16px;
+
+  background-color: inherit;
+}
+
+.btnClose:hover,
+.btnClose:focus {
+}
+
+.btnClose {
+  top: 20px;
+  right: 20px;
+}
+
+.photo-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo {
+  width: 290px;
+  height: 310px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+}

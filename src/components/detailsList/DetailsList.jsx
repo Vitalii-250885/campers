@@ -2,7 +2,6 @@ import css from "./DetailsList.module.css";
 
 const DetailsList = ({ details, adults, transmission, engine }) => {
   const ac = details.airConditioner;
-  const bathroom = details.bathroom;
   const kitchen = details.kitchen;
   const beds = details.beds;
 
