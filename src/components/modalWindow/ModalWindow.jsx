@@ -1,9 +1,16 @@
 import Modal from "react-modal";
 import css from "./ModalWindow.module.css";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import clsx from "clsx";
+import { useState } from "react";
 
 Modal.setAppElement("#root");
 
 const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
+  const navigate = useNavigate();
+
+  const [isShow, setIsShow] = useState(false);
+
   const name = camper.name;
   const price = camper.price;
   const rating = camper.rating;
@@ -16,44 +23,71 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
   // const transmission = camper.transmission;
   // const engine = camper.engine;
 
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(css.link, isActive && css.active);
+  };
+
+  const handleShowInfo = () => {
+    setIsShow(true);
+  };
+
   return (
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={onCloseModal}
       shouldCloseOnOverlayClick={true}
       shouldCloseOnEsc={true}
-      className={css.modalWindow}
-      style={{
-        overlay: {
-          backgroundColor: "rgba(17, 18, 19, 0.1)",
-        },
-      }}>
-      <div className={css.modalContainer}>
-        <button type="button" onClick={onCloseModal} className={css.btnClose}>
-          x
-        </button>
-        <div className={css["modal-window"]}>
-          <h4 className={css.name}>{name}</h4>
-          <p className={css.rating}>
-            <img src="icons/Rating.svg" className={css["rating-icon"]} alt="" />
-            {rating}({reviews.length} Reviews)
-            <img
-              src="icons/map-pin.svg"
-              className={css["location-icon"]}
-              alt=""
-            />
-            {location}
-          </p>
-          <p className={css.price}>&#8364; {price.toFixed(2)}</p>
-          <ul className={css["photo-list"]}>
-            {gallery.map((photo) => (
-              <li key={photo}>
-                <img src={photo} alt="" className={css.photo} />
-              </li>
-            ))}
-          </ul>
-          <p>{description}</p>
-        </div>
+      onAfterClose={() => navigate("/catalog")}
+      className={css["modal-window"]}
+      bodyOpenClassName={css["modal-open"]}
+      overlayClassName={css.overlay}>
+      <div className={css["modal-container"]}>
+        <img
+          src="icons/close.svg"
+          alt=""
+          className={css.btnClose}
+          onClick={onCloseModal}
+        />
+
+        <h4 className={css.name}>{name}</h4>
+        <p className={css.rating}>
+          <img src="icons/Rating.svg" className={css["rating-icon"]} alt="" />
+          {rating}({reviews.length} Reviews)
+          <img
+            src="icons/map-pin.svg"
+            className={css["location-icon"]}
+            alt=""
+          />
+          {location}
+        </p>
+        <p className={css.price}>&#8364; {price.toFixed(2)}</p>
+        <ul className={css["photo-list"]}>
+          {gallery.map((photo) => (
+            <li key={photo}>
+              <img src={photo} alt="" className={css.photo} />
+            </li>
+          ))}
+        </ul>
+        <p className={css.description}>{description}</p>
+        <ul className={css["information-list"]}>
+          <li className={css["information-item"]}>
+            <NavLink
+              to="features"
+              onClick={handleShowInfo}
+              className={buildLinkClass}>
+              Features
+            </NavLink>
+          </li>
+          <li className={css["information-item"]}>
+            <NavLink
+              to="reviews"
+              onClick={handleShowInfo}
+              className={buildLinkClass}>
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+        {isShow && <Outlet />}
       </div>
     </Modal>
   );
