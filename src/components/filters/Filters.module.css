@@ -20,3 +20,8 @@
   background-color: #e44848;
   color: #ffffff;
 }
+
+.button:hover {
+  background-color: #d84343;
+  cursor: pointer;
+}

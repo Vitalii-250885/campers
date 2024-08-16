@@ -33,7 +33,9 @@ const CamperItem = ({ openModal, camper }) => {
           </div>
           <p className={css.rating}>
             <img src="icons/Rating.svg" className={css["rating-icon"]} alt="" />
-            {rating}({reviews.length} Reviews)
+            <span className={css.reviews}>
+              {rating}({reviews.length} Reviews)
+            </span>
             <img
               src="icons/map-pin.svg"
               className={css["location-icon"]}

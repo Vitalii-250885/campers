@@ -23,10 +23,6 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
   const description = camper.description;
   const gallery = camper.gallery;
   const reviews = camper.reviews;
-  // const details = camper.details;
-  // const adults = camper.adults;
-  // const transmission = camper.transmission;
-  // const engine = camper.engine;
 
   const handleShowFeatures = () => {
     setIsShowReviews(false);
@@ -56,14 +52,16 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
         <img
           src="icons/close.svg"
           alt=""
-          className={css.btnClose}
+          className={css["btn-close"]}
           onClick={onCloseModal}
         />
 
         <h4 className={css.name}>{name}</h4>
         <p className={css.rating}>
           <img src="icons/Rating.svg" className={css["rating-icon"]} alt="" />
-          {rating}({reviews.length} Reviews)
+          <span className={css.reviews}>
+            {rating}({reviews.length} Reviews)
+          </span>
           <img
             src="icons/map-pin.svg"
             className={css["location-icon"]}
@@ -99,7 +97,7 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
         <div className={css.container}>
           <div className={css.details}>
             {isShowFeatures && <Features camper={camper} />}
-            {isShowReviews && <Reviews />}
+            {isShowReviews && <Reviews camper={camper} />}
           </div>
           <div className={css.form}>
             <h3 className={css.title}>Book your campervan now</h3>

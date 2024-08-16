@@ -8,7 +8,7 @@ const VehicleDetails = ({ camper }) => {
       <h3 className={css.title}>Vehicle details</h3>
       <ul className={css["parameters-list"]}>
         <li className={css["parameters-item"]}>
-          <span>Form</span>{" "}
+          <span>Form</span>
           <span>{form.charAt(0).toUpperCase() + form.slice(1)}</span>
         </li>
         <li className={css["parameters-item"]}>

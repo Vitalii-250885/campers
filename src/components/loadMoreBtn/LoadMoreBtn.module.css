@@ -11,3 +11,8 @@
   background-color: #ffffff;
   color: #101828;
 }
+
+.button:hover {
+  border: solid #d84343 1px;
+  cursor: pointer;
+}

@@ -7,7 +7,21 @@ const DetailsList = ({
   engine,
   detainsFeatures,
 }) => {
-  const { airConditioner, kitchen, beds, CD, radio, hob } = details;
+  const {
+    airConditioner,
+    kitchen,
+    beds,
+    CD,
+    radio,
+    hob,
+    toilet,
+    shower,
+    freezer,
+    gas,
+    water,
+    microwave,
+    TV,
+  } = details;
 
   return (
     <ul className={css["details-list"]}>
@@ -39,6 +53,16 @@ const DetailsList = ({
           AC
         </li>
       )}
+      {airConditioner > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img
+            src="icons/streamline_hotel-air-conditioner.svg"
+            alt=""
+            className={css.icon}
+          />
+          {airConditioner} air сonditioner
+        </li>
+      )}
       {CD > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img
@@ -59,6 +83,56 @@ const DetailsList = ({
         <li className={css["details-item"]}>
           <img src="icons/hob.svg" alt="" className={css.icon} />
           {hob} hob
+        </li>
+      )}
+      {toilet > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img
+            src="icons/mingcute_toilet-paper-line.svg"
+            alt=""
+            className={css.icon}
+          />
+          Toilet
+        </li>
+      )}
+      {shower > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/shower_small.svg" alt="" className={css.icon} />
+          Shower
+        </li>
+      )}
+      {freezer > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/arcticons_freezer.svg" alt="" className={css.icon} />
+          Freezer
+        </li>
+      )}
+      {gas !== "" && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/mdi_gas.svg" alt="" className={css.icon} />
+          {gas} gas
+        </li>
+      )}
+      {water !== "" && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/ion_water-outline.svg" alt="" className={css.icon} />
+          {water} water
+        </li>
+      )}
+      {microwave > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img
+            src="icons/streamline_microwave.svg"
+            alt=""
+            className={css.icon}
+          />
+          Microwave
+        </li>
+      )}
+      {TV > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/TV.svg" alt="" className={css.icon} />
+          TV
         </li>
       )}
     </ul>

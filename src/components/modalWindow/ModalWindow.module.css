@@ -36,20 +36,23 @@
   background-color: #ffffff;
 }
 
-.btnClose {
+.btn-close {
   position: absolute;
 
   width: 24px;
   height: 24px;
   top: 20px;
-  right: 16px;
+  right: 20px;
 
   background-color: inherit;
 }
 
-.btnClose {
-  top: 20px;
-  right: 20px;
+.btn-close:hover {
+  cursor: pointer;
+}
+
+.reviews {
+  border-bottom: 1px solid #101828;
 }
 
 .name {
@@ -102,6 +105,8 @@
 .description {
   margin-top: 24px;
 
+  line-height: 1.5;
+
   color: #475467;
 }
 
@@ -126,6 +131,11 @@
   font-weight: 700;
 
   color: #101828;
+}
+
+.link:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #101828;
 }
 
 .active {
@@ -158,6 +168,7 @@
   flex-direction: column;
 
   width: 448px;
+  height: 480px;
   padding: 24px;
 
   border: 1px solid rgba(16, 24, 40, 0.6);
@@ -212,4 +223,9 @@
 
   background-color: #e44848;
   color: #ffffff;
+}
+
+.button:hover {
+  background-color: #d84343;
+  cursor: pointer;
 }

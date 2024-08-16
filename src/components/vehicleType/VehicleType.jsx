@@ -1,20 +1,56 @@
+import { useState } from "react";
 import css from "./VehicleType.module.css";
+import clsx from "clsx";
 
 const VehicleType = () => {
+  const [van, setVan] = useState(false);
+  const [fully, setFully] = useState(false);
+  const [alcove, setAlcove] = useState(false);
+
+  const handleClickVan = () => {
+    if (van) {
+      setVan(false);
+      return;
+    }
+    setVan(true);
+  };
+
+  const handleClickFully = () => {
+    if (fully) {
+      setFully(false);
+      return;
+    }
+    setFully(true);
+  };
+
+  const handleClickAlcove = () => {
+    if (alcove) {
+      setAlcove(false);
+      return;
+    }
+    setAlcove(true);
+  };
+
   return (
     <div className={css.container}>
       <h3 className={css.title}>Vehicle type</h3>
       <ul className={css["parameters-list"]}>
-        <li className={css["parameters-item"]}>
+        <li
+          className={clsx(css["parameters-item"], van && css.active)}
+          onClick={handleClickVan}>
           <img src="icons/Van.svg" className={css.icon} alt="" />
           Van
         </li>
-        <li className={css["parameters-item"]}>
+        <li
+          className={clsx(css["parameters-item"], fully && css.active)}
+          onClick={handleClickFully}>
           <img src="icons/fully-integrated.svg" className={css.icon} alt="" />
           <p>Fully</p>
           <p>Integrated</p>
         </li>
-        <li className={css["parameters-item"]}>
+        <li
+          className={clsx(css["parameters-item"], alcove && css.active)}
+          onClick={handleClickAlcove}>
           <img src="icons/Alcove.svg" className={css.icon} alt="" />
           Alcove
         </li>

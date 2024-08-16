@@ -48,6 +48,10 @@
   margin-left: 10px;
 }
 
+.reviews {
+  border-bottom: 1px solid #101828;
+}
+
 .rating {
   display: flex;
   align-items: center;
@@ -88,4 +92,9 @@
 
   background-color: #e44848;
   color: #ffffff;
+}
+
+.button:hover {
+  background-color: #d84343;
+  cursor: pointer;
 }

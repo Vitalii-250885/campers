@@ -1,46 +1,40 @@
-.container {
-  margin-top: 20px;
-  padding: 20px;
-
-  border-radius: 20px;
-
-  background-color: rgba(0, 0, 0, 0.9);
+.review-item {
+  margin-bottom: 24px;
 }
 
-.title {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 30px;
+.review-item:last-child {
+  margin-bottom: 0;
 }
 
-.item {
-  margin-top: 30px;
-  padding: 20px;
-
-  border-radius: 20px;
-
-  background-color: rgba(64, 32, 0, 0.5);
+.header {
+  display: flex;
+  align-items: center;
 }
 
-.name {
-  margin-left: 30px;
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  font-size: 20px;
-  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
 
-  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+
+  border-radius: 60px;
+
+  background-color: #f2f4f7;
+  color: #e44848;
 }
 
-.date {
-  font-size: 12px;
-
-  color: #ffffff;
+.rating {
+  display: flex;
 }
 
-.text {
-  margin-top: 20px;
-
+.comment {
+  margin-top: 16px;
+  color: #475467;
   line-height: 1.5;
-
-  color: #ffffff;
 }
