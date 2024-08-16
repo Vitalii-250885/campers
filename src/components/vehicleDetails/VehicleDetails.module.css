@@ -1,0 +1,39 @@
+.container {
+  margin-top: 44px;
+}
+
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #101828;
+}
+
+.parameters-list {
+  margin-top: 24px;
+  padding-top: 24px;
+
+  border-top: rgba(16, 24, 40, 0.1) solid 1px;
+}
+
+.parameters-item {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+
+  font-size: 18px;
+}
+
+.parameters-item:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  margin-bottom: 8px;
+}
+
+p {
+  line-height: 1;
+}

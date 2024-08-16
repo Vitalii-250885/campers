@@ -3,21 +3,21 @@ import DetailsList from "../detailsList/DetailsList";
 import css from "./CamperItem.module.css";
 
 const CamperItem = ({ openModal, camper }) => {
-const {name, price,rating, location, description, gallery, reviews, details }
+  const {
+    name,
+    price,
+    rating,
+    location,
+    description,
+    gallery,
+    reviews,
+    details,
+    adults,
+    transmission,
+    engine,
+  } = camper;
 
-  const name = camper.name;
-  const price = camper.price;
-  const rating = camper.rating;
-  const location = camper.location;
-  const description = camper.description;
-  const gallery = camper.gallery;
-  const reviews = camper.reviews;
-  const details = camper.details;
-  const adults = camper.adults;
-  const transmission = camper.transmission;
-  const engine = camper.engine;
-
-  const detainsBoolean = false;
+  const detainsFeatures = false;
 
   return (
     <>
@@ -43,7 +43,7 @@ const {name, price,rating, location, description, gallery, reviews, details }
           </p>
           <p className={css.description}>{description}</p>
           <DetailsList
-            detainsBoolean={detainsBoolean}
+            detainsFeatures={detainsFeatures}
             details={details}
             adults={adults}
             transmission={transmission}

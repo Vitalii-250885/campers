@@ -11,9 +11,9 @@ Modal.setAppElement("#root");
 const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
   const navigate = useNavigate();
 
-  const [isShowFeatures, setIsShowFeatures] = useState(false);
+  const [isShowFeatures, setIsShowFeatures] = useState(true);
   const [isShowReviews, setIsShowReviews] = useState(false);
-  const [isActiveFeatures, setIsActiveFeatures] = useState(false);
+  const [isActiveFeatures, setIsActiveFeatures] = useState(true);
   const [isActiveReviews, setIsActiveReviews] = useState(false);
 
   const name = camper.name;
@@ -96,8 +96,33 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
             </span>
           </li>
         </ul>
-        {isShowFeatures && <Features camper={camper} />}
-        {isShowReviews && <Reviews />}
+        <div className={css.container}>
+          <div className={css.details}>
+            {isShowFeatures && <Features camper={camper} />}
+            {isShowReviews && <Reviews />}
+          </div>
+          <div className={css.form}>
+            <h3 className={css.title}>Book your campervan now</h3>
+            <p className={css.call}>
+              Stay connected! We are always ready to help you.
+            </p>
+            <input type="text" className={css.input} placeholder="Name" />
+            <input type="email" className={css.input} placeholder="Email" />
+            <input
+              type="date"
+              className={css.input}
+              placeholder="Booking date"
+            />
+            <textarea
+              name="comment"
+              rows="5"
+              className={css.textaria}
+              placeholder="Comment"></textarea>
+            <button type="button" className={css.button}>
+              Send
+            </button>
+          </div>
+        </div>
       </div>
     </Modal>
   );

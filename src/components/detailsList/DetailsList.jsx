@@ -1,8 +1,13 @@
 import css from "./DetailsList.module.css";
 
-const DetailsList = ({ details, adults, transmission, engine }) => {
-  const { airConditioner, kitchen, beds, CD } = details;
-  const detainsBoollean = true;
+const DetailsList = ({
+  details,
+  adults,
+  transmission,
+  engine,
+  detainsFeatures,
+}) => {
+  const { airConditioner, kitchen, beds, CD, radio, hob } = details;
 
   return (
     <ul className={css["details-list"]}>
@@ -34,7 +39,7 @@ const DetailsList = ({ details, adults, transmission, engine }) => {
           AC
         </li>
       )}
-      {CD > 0 && detainsBoollean && (
+      {CD > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img
             src="icons/icon-park-outline_cd.svg"
@@ -42,6 +47,18 @@ const DetailsList = ({ details, adults, transmission, engine }) => {
             className={css.icon}
           />
           CD
+        </li>
+      )}
+      {radio > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/solar_radio-linear.svg" alt="" className={css.icon} />
+          Radio
+        </li>
+      )}
+      {hob > 0 && detainsFeatures && (
+        <li className={css["details-item"]}>
+          <img src="icons/hob.svg" alt="" className={css.icon} />
+          {hob} hob
         </li>
       )}
     </ul>
