@@ -1,15 +1,20 @@
 import Modal from "react-modal";
 import css from "./ModalWindow.module.css";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import { useState } from "react";
+import Features from "../features/Features";
+import Reviews from "../reviews/Reviews";
 
 Modal.setAppElement("#root");
 
 const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
   const navigate = useNavigate();
 
-  const [isShow, setIsShow] = useState(false);
+  const [isShowFeatures, setIsShowFeatures] = useState(false);
+  const [isShowReviews, setIsShowReviews] = useState(false);
+  const [isActiveFeatures, setIsActiveFeatures] = useState(false);
+  const [isActiveReviews, setIsActiveReviews] = useState(false);
 
   const name = camper.name;
   const price = camper.price;
@@ -23,12 +28,18 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
   // const transmission = camper.transmission;
   // const engine = camper.engine;
 
-  const buildLinkClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
+  const handleShowFeatures = () => {
+    setIsShowReviews(false);
+    setIsShowFeatures(true);
+    setIsActiveFeatures(true);
+    setIsActiveReviews(false);
   };
 
-  const handleShowInfo = () => {
-    setIsShow(true);
+  const handleShowReviews = () => {
+    setIsShowFeatures(false);
+    setIsShowReviews(true);
+    setIsActiveReviews(true);
+    setIsActiveFeatures(false);
   };
 
   return (
@@ -71,23 +82,22 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, camper }) => {
         <p className={css.description}>{description}</p>
         <ul className={css["information-list"]}>
           <li className={css["information-item"]}>
-            <NavLink
-              to="features"
-              onClick={handleShowInfo}
-              className={buildLinkClass}>
+            <span
+              onClick={handleShowFeatures}
+              className={clsx(css.link, isActiveFeatures && css.active)}>
               Features
-            </NavLink>
+            </span>
           </li>
           <li className={css["information-item"]}>
-            <NavLink
-              to="reviews"
-              onClick={handleShowInfo}
-              className={buildLinkClass}>
+            <span
+              onClick={handleShowReviews}
+              className={clsx(css.link, isActiveReviews && css.active)}>
               Reviews
-            </NavLink>
+            </span>
           </li>
         </ul>
-        {isShow && <Outlet />}
+        {isShowFeatures && <Features camper={camper} />}
+        {isShowReviews && <Reviews />}
       </div>
     </Modal>
   );

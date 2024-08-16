@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+
+  margin-top: 23px;
+  padding-top: 44px;
+
+  border-top: 1px solid rgba(16, 24, 40, 0.2);
+}
+
+.details {
+  width: 50%;
+}
+
+.form {
+  width: 50%;
+}

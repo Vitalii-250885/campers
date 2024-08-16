@@ -3,6 +3,8 @@ import DetailsList from "../detailsList/DetailsList";
 import css from "./CamperItem.module.css";
 
 const CamperItem = ({ openModal, camper }) => {
+const {name, price,rating, location, description, gallery, reviews, details }
+
   const name = camper.name;
   const price = camper.price;
   const rating = camper.rating;
@@ -14,6 +16,8 @@ const CamperItem = ({ openModal, camper }) => {
   const adults = camper.adults;
   const transmission = camper.transmission;
   const engine = camper.engine;
+
+  const detainsBoolean = false;
 
   return (
     <>
@@ -39,6 +43,7 @@ const CamperItem = ({ openModal, camper }) => {
           </p>
           <p className={css.description}>{description}</p>
           <DetailsList
+            detainsBoolean={detainsBoolean}
             details={details}
             adults={adults}
             transmission={transmission}
