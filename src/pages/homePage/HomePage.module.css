@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  padding-top: 24px;
+}
+
+.greetings-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 50%;
+  margin-top: 100px;
+}
+
+.greetings {
+  font-size: 30px;
+  color: #101828;
+}
+
+.text {
+  width: 500px;
+  margin-top: 60px;
+
+  font-size: 20px;
+  line-height: 1.5;
+
+  color: #475467;
+}
+
+.image-section {
+  position: relative;
+
+  width: 50%;
+}
+
+.image1 {
+  position: absolute;
+
+  left: 14px;
+  width: 290px;
+  height: 310px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+  z-index: 3;
+}
+
+.image2 {
+  position: absolute;
+
+  top: 250px;
+  left: 200px;
+  width: 290px;
+  height: 310px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+  z-index: 2;
+}
+
+.image3 {
+  position: absolute;
+
+  top: 50px;
+  left: 400px;
+  width: 290px;
+  height: 310px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+  z-index: 1;
+}

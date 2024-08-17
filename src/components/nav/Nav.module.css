@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0 30px;
+}
+
+.link {
+  margin-right: 24px;
+  padding: 24px 0;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #101828;
+}
+
+.link:last-child {
+  margin-right: 0;
+}
+
+.link:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #101828;
+}
+
+.active {
+  padding: 24px 0;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #101828;
+
+  border-bottom: 5px solid #e44848;
+}
