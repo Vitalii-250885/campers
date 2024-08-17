@@ -1,16 +1,17 @@
-// import { createSelector } from "@reduxjs/toolkit";
+export const selectLocationFilter = (state) => state.filters.location;
 
-// // export const selectItems = (state) => state.contacts.items;
+export const selectAcFilter = (state) => state.filters.ac;
 
-// // export const selectNameFilter = (state) => state.filters.name;
+export const selectAutomaticFilter = (state) => state.filters.automatic;
 
-// export const selectFilteredCampers = createSelector(
-//     [selectItems, selectNameFilter],
-//     (contacts, filterValue) => {
-//       const filteredContacts = contacts.filter((contact) => {
-//         return contact.name.toLowerCase().includes(filterValue.toLowerCase());
-//       });
+export const selectKitchenFilter = (state) => state.filters.kitchen;
 
-//       return filteredContacts;
-//     }
-//   );
+export const selectTvFilter = (state) => state.filters.TV;
+
+export const selectShowerFilter = (state) => state.filters.shower;
+
+export const selectVanFilter = (state) => state.filters.van;
+
+export const selectFullyFilter = (state) => state.filters.fully;
+
+export const selectAlcoveFilter = (state) => state.filters.alcove;

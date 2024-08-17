@@ -1,12 +1,7 @@
-import { useState } from "react";
 import css from "./VehicleType.module.css";
 import clsx from "clsx";
 
-const VehicleType = () => {
-  const [van, setVan] = useState(false);
-  const [fully, setFully] = useState(false);
-  const [alcove, setAlcove] = useState(false);
-
+const VehicleType = ({ van, setVan, fully, setFully, alcove, setAlcove }) => {
   const handleClickVan = () => {
     if (van) {
       setVan(false);

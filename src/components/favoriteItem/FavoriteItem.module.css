@@ -1,8 +1,7 @@
 .item {
   display: flex;
 
-  width: 840px;
-  height: 310px;
+  width: 590px;
   padding: 24px;
   margin-bottom: 32px;
 
@@ -12,6 +11,10 @@
 
 .item:last-child {
   margin-bottom: 50px;
+}
+
+.info {
+  width: 276px;
 }
 
 .image {
@@ -24,14 +27,12 @@
   object-fit: cover;
 }
 
-.name-prise {
+.name-icon {
   display: flex;
   justify-content: space-between;
 }
 
 .name {
-  width: 360px;
-
   font-size: 24px;
 
   color: #101828;
@@ -43,6 +44,8 @@
 
 .price {
   display: flex;
+
+  margin-top: 16px;
 
   font-size: 24px;
   font-weight: 700;
@@ -63,6 +66,8 @@
   align-items: center;
 
   margin-top: 8px;
+
+  font-size: 14px;
 }
 
 .rating-icon {
@@ -75,7 +80,7 @@
 }
 
 .description {
-  width: 525px;
+  width: 100%;
   margin-top: 24px;
   margin-bottom: 16px;
 

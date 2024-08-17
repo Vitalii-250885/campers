@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchCamperByIdThunk, fetchCampersThunk } from "./operations";
+import { fetchCampersThunk } from "./operations";
 
 const isPanding = (action) =>
   typeof action.type === "string" && action.type.endsWith("/pending");
@@ -23,12 +23,6 @@ const campersSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
-      })
-
-      .addCase(fetchCamperByIdThunk.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.camper = action.payload;
       })
 
       .addMatcher(isPanding, (state) => {

@@ -1,7 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: "",
+  location: "",
+  ac: false,
+  automatic: false,
+  kitchen: false,
+  TV: false,
+  shower: false,
+  van: false,
+  fully: false,
+  alcove: false,
 };
 
 export const filtersSlice = createSlice({
@@ -9,7 +17,15 @@ export const filtersSlice = createSlice({
   initialState,
   reducers: {
     changeFilter: (state, action) => {
-      state.name = action.payload;
+      state.location = action.payload.location;
+      state.TV = action.payload.tv;
+      state.ac = action.payload.ac;
+      state.automatic = action.payload.automatic;
+      state.kitchen = action.payload.kitchen;
+      state.shower = action.payload.shower;
+      state.van = action.payload.van;
+      state.fully = action.payload.fully;
+      state.alcove = action.payload.alcove;
     },
   },
 });

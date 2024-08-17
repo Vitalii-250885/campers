@@ -1,15 +1,19 @@
 import clsx from "clsx";
 
 import css from "./VehicleEquipment.module.css";
-import { useState } from "react";
 
-const VehicleEquipment = () => {
-  const [ac, setAc] = useState(false);
-  const [automatic, setAutomatic] = useState(false);
-  const [kitchen, setKitchen] = useState(false);
-  const [tv, setTv] = useState(false);
-  const [shower, setShower] = useState(false);
-
+const VehicleEquipment = ({
+  setAc,
+  setAutomatic,
+  setKitchen,
+  setTv,
+  setShower,
+  tv,
+  ac,
+  automatic,
+  kitchen,
+  shower,
+}) => {
   const handleClickAc = () => {
     if (ac) {
       setAc(false);
