@@ -54,6 +54,10 @@
   margin-left: 10px;
 }
 
+.like:hover {
+  cursor: pointer;
+}
+
 .reviews {
   border-bottom: 1px solid #101828;
 }

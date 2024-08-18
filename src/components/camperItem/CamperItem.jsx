@@ -1,8 +1,19 @@
+import { useState } from "react";
+
+import { changeFavorite } from "../../redux/favorite/slice";
+
 import DetailsList from "../detailsList/DetailsList";
 
 import css from "./CamperItem.module.css";
+import { useDispatch } from "react-redux";
 
 const CamperItem = ({ openModal, camper }) => {
+  const dispatch = useDispatch();
+
+  const [pressed, setPressed] = useState(
+    JSON.parse(localStorage.getItem("pressed-like"))
+  );
+
   const {
     name,
     price,
@@ -19,6 +30,11 @@ const CamperItem = ({ openModal, camper }) => {
 
   const detainsFeatures = false;
 
+  const handleClickLike = (camper) => {
+    setPressed(!pressed);
+    dispatch(changeFavorite(camper));
+  };
+
   return (
     <>
       <li className={css.item}>
@@ -28,7 +44,12 @@ const CamperItem = ({ openModal, camper }) => {
             <h4 className={css.name}>{name}</h4>
             <p className={css.price}>
               &#8364; {price.toFixed(2)}
-              <img src="icons/like.svg" alt="" className={css.like} />
+              <img
+                src={pressed ? "icons/like_pressed.svg" : "icons/like.svg"}
+                alt=""
+                onClick={() => handleClickLike(camper)}
+                className={css.like}
+              />
             </p>
           </div>
           <p className={css.rating}>

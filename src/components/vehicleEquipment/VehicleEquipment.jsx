@@ -15,43 +15,23 @@ const VehicleEquipment = ({
   shower,
 }) => {
   const handleClickAc = () => {
-    if (ac) {
-      setAc(false);
-      return;
-    }
-    setAc(true);
+    setAc(!ac);
   };
 
   const handleClickAutomatic = () => {
-    if (automatic) {
-      setAutomatic(false);
-      return;
-    }
-    setAutomatic(true);
+    setAutomatic(!automatic);
   };
 
   const handleClickKitchen = () => {
-    if (kitchen) {
-      setKitchen(false);
-      return;
-    }
-    setKitchen(true);
+    setKitchen(!kitchen);
   };
 
   const handleClickTv = () => {
-    if (tv) {
-      setTv(false);
-      return;
-    }
-    setTv(true);
+    setTv(!tv);
   };
 
   const handleClickShower = () => {
-    if (shower) {
-      setShower(false);
-      return;
-    }
-    setShower(true);
+    setShower(!shower);
   };
 
   return (

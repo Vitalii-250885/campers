@@ -18,7 +18,7 @@ const Nav = () => {
       <NavLink
         to="/favorites"
         className={({ isActive }) => `${isActive && css.active} ${css.link}`}>
-        Favorite
+        Favorites
       </NavLink>
     </nav>
   );

@@ -3,27 +3,15 @@ import clsx from "clsx";
 
 const VehicleType = ({ van, setVan, fully, setFully, alcove, setAlcove }) => {
   const handleClickVan = () => {
-    if (van) {
-      setVan(false);
-      return;
-    }
-    setVan(true);
+    setVan(!van);
   };
 
   const handleClickFully = () => {
-    if (fully) {
-      setFully(false);
-      return;
-    }
-    setFully(true);
+    setFully(!fully);
   };
 
   const handleClickAlcove = () => {
-    if (alcove) {
-      setAlcove(false);
-      return;
-    }
-    setAlcove(true);
+    setAlcove(!alcove);
   };
 
   return (

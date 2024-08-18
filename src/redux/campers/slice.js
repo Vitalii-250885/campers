@@ -11,7 +11,6 @@ const campersSlice = createSlice({
   name: "campers",
   initialState: {
     items: [],
-    camper: {},
     isLoading: false,
     error: null,
   },

@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import { selectCampers } from "../../redux/campers/selectors";
-
 import ModalWindow from "../modalWindow/ModalWindow";
 
 import css from "./FavoriteList.module.css";
 import FavoriteItem from "../favoriteItem/FavoriteItem";
+import { selectFavoriteCampers } from "../../redux/favorite/selectors";
 
 const FavoriteList = () => {
   const [camper, setCamper] = useState({ price: 0, reviews: [], gallery: [] });
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const campers = useSelector(selectCampers);
+  const favoriteCampers = useSelector(selectFavoriteCampers);
 
   const openModal = (camper) => {
     setCamper(camper);
@@ -26,7 +25,7 @@ const FavoriteList = () => {
   return (
     <div className={css.catalog}>
       <ul className={css.list}>
-        {campers.map((camper) => (
+        {favoriteCampers.map((camper) => (
           <FavoriteItem
             key={camper._id}
             openModal={openModal}
