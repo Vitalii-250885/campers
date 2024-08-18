@@ -16,14 +16,14 @@ export const fetchCampersThunk = createAsyncThunk(
   }
 );
 
-// export const changeFavoritesCampersThunk = createAsyncThunk(
-//   "campers/patchFavoriteCamper",
-//   async (id, thunkApi) => {
-//     try {
-//       const res = await axios.patch(`/campers/${id}`);
-//       return res.data;
-//     } catch (error) {
-//       return thunkApi.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const changeFavoritesCampersThunk = createAsyncThunk(
+  "campers/patchFavoriteCamper",
+  async (id, thunkApi) => {
+    try {
+      const res = await axios.patch(`/campers/${id}`);
+      return res.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
