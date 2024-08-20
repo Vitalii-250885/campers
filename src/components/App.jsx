@@ -7,14 +7,14 @@ import { Layout } from "./Layout";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<HomePage />} />
-      </Routes>
-    </Layout>
+      </Route>
+    </Routes>
   );
 }
 
