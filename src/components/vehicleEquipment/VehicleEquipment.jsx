@@ -42,31 +42,31 @@ const VehicleEquipment = ({
           className={clsx(css["parameters-item"], ac && css.active)}
           onClick={handleClickAc}>
           <img src="icons/AC.svg" className={css.icon} alt="" />
-          AC
+          <span>AC</span>
         </li>
         <li
           className={clsx(css["parameters-item"], automatic && css.active)}
           onClick={handleClickAutomatic}>
           <img src="icons/Automatic.svg" className={css.icon} alt="" />
-          Automatic
+          <span>Automatic</span>
         </li>
         <li
           className={clsx(css["parameters-item"], kitchen && css.active)}
           onClick={handleClickKitchen}>
           <img src="icons/Kitchen.svg" className={css.icon} alt="" />
-          Kitchen
+          <span>Kitchen</span>
         </li>
         <li
           className={clsx(css["parameters-item"], tv && css.active)}
           onClick={handleClickTv}>
           <img src="icons/TV.svg" className={css.icon} alt="" />
-          TV
+          <span>TV</span>
         </li>
         <li
           className={clsx(css["parameters-item"], shower && css.active)}
           onClick={handleClickShower}>
           <img src="icons/Shower.svg" className={css.icon} alt="" />
-          Shower/WC
+          <span>Shower/WC</span>
         </li>
       </ul>
     </div>

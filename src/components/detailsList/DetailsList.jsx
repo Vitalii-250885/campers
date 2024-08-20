@@ -27,30 +27,32 @@ const DetailsList = ({
     <ul className={css["details-list"]}>
       <li className={css["details-item"]}>
         <img src="icons/adult.svg" alt="" className={css.icon} />
-        {adults} adults
+        <span>{adults} adults</span>
       </li>
       <li className={css["details-item"]}>
         <img src="icons/automatic_small.svg" alt="" className={css.icon} />
-        {transmission.charAt(0).toUpperCase() + transmission.slice(1)}
+        <span>
+          {transmission.charAt(0).toUpperCase() + transmission.slice(1)}
+        </span>
       </li>
       <li className={css["details-item"]}>
         <img src="icons/engine.svg" alt="" className={css.icon} />
-        {engine.charAt(0).toUpperCase() + engine.slice(1)}
+        <span>{engine.charAt(0).toUpperCase() + engine.slice(1)}</span>
       </li>
       {kitchen > 0 && (
         <li className={css["details-item"]}>
           <img src="icons/kitchen_small.svg" alt="" className={css.icon} />
-          Kitchen
+          <span>Kitchen</span>
         </li>
       )}
       <li className={css["details-item"]}>
         <img src="icons/beds.svg" alt="" className={css.icon} />
-        {beds} beds
+        <span>{beds} beds</span>
       </li>
       {airConditioner > 0 && (
         <li className={css["details-item"]}>
           <img src="icons/ac_small.svg" alt="" className={css.icon} />
-          AC
+          <span>AC</span>
         </li>
       )}
       {airConditioner > 0 && detainsFeatures && (
@@ -60,7 +62,7 @@ const DetailsList = ({
             alt=""
             className={css.icon}
           />
-          {airConditioner} air сonditioner
+          <span>{airConditioner} air сonditioner</span>
         </li>
       )}
       {CD > 0 && detainsFeatures && (
@@ -70,19 +72,19 @@ const DetailsList = ({
             alt=""
             className={css.icon}
           />
-          CD
+          <span>CD</span>
         </li>
       )}
       {radio > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/solar_radio-linear.svg" alt="" className={css.icon} />
-          Radio
+          <span>Radio</span>
         </li>
       )}
       {hob > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/hob.svg" alt="" className={css.icon} />
-          {hob} hob
+          <span>{hob} hob</span>
         </li>
       )}
       {toilet > 0 && detainsFeatures && (
@@ -92,31 +94,31 @@ const DetailsList = ({
             alt=""
             className={css.icon}
           />
-          Toilet
+          <span>Toilet</span>
         </li>
       )}
       {shower > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/shower_small.svg" alt="" className={css.icon} />
-          Shower
+          <span>Shower</span>
         </li>
       )}
       {freezer > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/arcticons_freezer.svg" alt="" className={css.icon} />
-          Freezer
+          <span>Freezer</span>
         </li>
       )}
       {gas !== "" && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/mdi_gas.svg" alt="" className={css.icon} />
-          {gas} gas
+          <span>{gas} gas</span>
         </li>
       )}
       {water !== "" && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/ion_water-outline.svg" alt="" className={css.icon} />
-          {water} water
+          <span>{water} water</span>
         </li>
       )}
       {microwave > 0 && detainsFeatures && (
@@ -126,13 +128,13 @@ const DetailsList = ({
             alt=""
             className={css.icon}
           />
-          Microwave
+          <span>Microwave</span>
         </li>
       )}
       {TV > 0 && detainsFeatures && (
         <li className={css["details-item"]}>
           <img src="icons/TV.svg" alt="" className={css.icon} />
-          TV
+          <span>TV</span>
         </li>
       )}
     </ul>

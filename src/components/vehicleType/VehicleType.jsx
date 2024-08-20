@@ -22,7 +22,7 @@ const VehicleType = ({ van, setVan, fully, setFully, alcove, setAlcove }) => {
           className={clsx(css["parameters-item"], van && css.active)}
           onClick={handleClickVan}>
           <img src="icons/Van.svg" className={css.icon} alt="" />
-          Van
+          <span>Van</span>
         </li>
         <li
           className={clsx(css["parameters-item"], fully && css.active)}
@@ -35,7 +35,7 @@ const VehicleType = ({ van, setVan, fully, setFully, alcove, setAlcove }) => {
           className={clsx(css["parameters-item"], alcove && css.active)}
           onClick={handleClickAlcove}>
           <img src="icons/Alcove.svg" className={css.icon} alt="" />
-          Alcove
+          <span>Alcove</span>
         </li>
       </ul>
     </div>

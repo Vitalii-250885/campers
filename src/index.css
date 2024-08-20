@@ -1,11 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+#root {
+  width: 1440px;
+
+  box-sizing: border-box;
+}
+
 body {
-  width: 1312px;
-  padding: 0 64px 30px 64px;
+  width: 1440px;
+  margin: auto;
 
   font-family: "Inter", sans-serif;
   line-height: 1.5;
+
+  box-sizing: border-box;
 }
 
 h1,
