@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { selectCampers } from "../../redux/campers/selectors";
 
@@ -19,15 +19,18 @@ import {
   selectTvFilter,
   selectVanFilter,
 } from "../../redux/filrets/selectors";
+import { useEffect } from "react";
+import { fetchCampersThunk } from "../../redux/campers/operations";
 
 const CamperList = () => {
-  // const [quantity, setQuantity] = useState(4);
+  const dispatch = useDispatch();
+
   const [visible, setVisible] = useState(true);
   const [camper, setCamper] = useState({ price: 0, reviews: [], gallery: [] });
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [page, setPage] = useState(1);
 
   const campers = useSelector(selectCampers);
-  // .slice(0, quantity);
   const filterLocation = useSelector(selectLocationFilter);
   const filterAc = useSelector(selectAcFilter);
   const filterAutomatic = useSelector(selectAutomaticFilter);
@@ -37,6 +40,10 @@ const CamperList = () => {
   const filterVan = useSelector(selectVanFilter);
   const filterFully = useSelector(selectFullyFilter);
   const filterAlcove = useSelector(selectAlcoveFilter);
+
+  useEffect(() => {
+    dispatch(fetchCampersThunk(page));
+  }, [dispatch, page]);
 
   const filteredCampers = campers
     .filter((camper) => {
@@ -104,8 +111,7 @@ const CamperList = () => {
   };
 
   const handleClickLoadMoreBtn = () => {
-    // setQuantity(999);
-    setVisible(false);
+    setPage(page + 1);
   };
 
   return (
