@@ -25,7 +25,7 @@ import { fetchCampersThunk } from "../../redux/campers/operations";
 const CamperList = () => {
   const dispatch = useDispatch();
 
-  const [visible, setVisible] = useState(true);
+  // const [visible, setVisible] = useState(true);
   const [camper, setCamper] = useState({ price: 0, reviews: [], gallery: [] });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [page, setPage] = useState(1);
@@ -126,7 +126,7 @@ const CamperList = () => {
         onCloseModal={onCloseModal}
         camper={camper}
       />
-      {visible && <LoadMoreBtn onClick={handleClickLoadMoreBtn} />}
+      <LoadMoreBtn onClick={handleClickLoadMoreBtn} />
     </div>
   );
 };
